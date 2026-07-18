@@ -81,19 +81,14 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
-TW_THEME := portrait_hdpi
+TW_THEME := landscape_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 
-# Habilitar motor gráfico DRM (Essencial para telas RK3326)
-TW_HAS_DRM := true
-TARGET_HAS_DRM := true
-TARGET_USES_DRM_HWCOMPOSER := true
+# Formato gráfico leve de 16-bits para projetor Low-RAM (Evita o Kernel Panic de VOP mmap)
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 
-# Formato de cor para Rockchip
-TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-
-# Evitar que a tela desligue e não consiga voltar
+# Evitar desligamento de tela que trave o projetor
 TW_NO_SCREEN_BLANK := true
