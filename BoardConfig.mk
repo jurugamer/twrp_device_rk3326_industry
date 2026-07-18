@@ -86,3 +86,14 @@ TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+
+# Habilitar motor gráfico DRM (Essencial para telas RK3326)
+TW_HAS_DRM := true
+TARGET_HAS_DRM := true
+TARGET_USES_DRM_HWCOMPOSER := true
+
+# Formato de cor para Rockchip
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+
+# Evitar que a tela desligue e não consiga voltar
+TW_NO_SCREEN_BLANK := true
