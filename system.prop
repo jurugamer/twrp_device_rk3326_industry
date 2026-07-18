@@ -1,0 +1,2 @@
+sys.usb.configfs=1
+sys.usb.controller=ff300000.usb
