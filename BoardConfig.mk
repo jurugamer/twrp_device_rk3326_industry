@@ -27,8 +27,10 @@ OVERRIDE_TARGET_FLATTEN_APEX := true
 TARGET_BOOTLOADER_BOARD_NAME := rk30sdk
 TARGET_NO_BOOTLOADER := true
 
-# Display
+# Display e Resolução Física Fixada (Evita estouro de mmap e Kernel Panic)
 TARGET_SCREEN_DENSITY := 240
+DEVICE_SCREEN_WIDTH := 1024
+DEVICE_SCREEN_HEIGHT := 600
 
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 1
@@ -80,15 +82,15 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
-# TWRP Configuration
-TW_THEME := landscape_hdpi
+# TWRP Configuration (Tema ajustado para a proporção 1024x600)
+TW_THEME := landscape_mdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 
-# Formato gráfico leve de 16-bits para projetor Low-RAM (Evita o Kernel Panic de VOP mmap)
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
+# Formato gráfico real de 32-bits da tela do seu projetor
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
 # Evitar desligamento de tela que trave o projetor
 TW_NO_SCREEN_BLANK := true
